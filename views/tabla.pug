@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  a(href='/register') Registrarse
+  table(class="table") 
+    thead 
+      tr 
+        th Nombre 
+        th Email 
+    tbody
+      each usuario in usuarios
+        tr 
+          td= usuario.name
+          td= usuario.email
+        

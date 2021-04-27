@@ -1,0 +1,17 @@
+extends layout 
+
+block content
+  container
+    form(action='/register' method='post')
+      div(class="mb-3")
+        label(for="name" class="form-label") Nombre 
+        input(type="text" ,id="name", name="name" class="form-control")
+      div(class="mb-3")
+        label(for="email" class="form-label") Email
+        input(type="text", id="email", name="email" class="form-control")
+      div(class="mb-3")
+        label(for="password" class="form-label") Contraseña
+        input(type="password", id="password", name="password" class="form-control")
+      div(class="mb-3")
+        button(type="submit" class= "btn btn-primary") Registrarse
+
