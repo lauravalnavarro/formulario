@@ -60,8 +60,13 @@ app.get('/register', (req, res) =>{
 });
 
 app.get('/', async (req, res) =>{
-  const usuarios = await Formulario.find()
-  res.render('tabla', {usuarios});
+  if(req.session.userId){
+    const usuarios = await Formulario.find()
+    res.render('tabla', {usuarios});
+  }else{
+    res.redirect('/login');
+  };
+ 
 });
 
 app.post('/register', (req,res) => {
